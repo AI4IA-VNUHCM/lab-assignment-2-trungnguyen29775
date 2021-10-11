@@ -61,5 +61,6 @@ int main(int argc, char *argv[]) {
 				i += 1;
 		}
 	}
+	printf(" ");
 	return 0;
 }
