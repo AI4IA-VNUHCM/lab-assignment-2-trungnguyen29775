@@ -24,6 +24,6 @@ int main(int argc, char *argv[]) {
 		result = 15000 + (((distance - 2) / 0.25) * 2000);
 	else if (distance > 30)
 		result = 15000 + (28 / 0.25) * 2000 + (distance - 30) * 5000;
-	printf("%d", result);
+	printf("%d", 1);
 	return 0;
 }
