@@ -17,32 +17,26 @@ int main(int argc, char *argv[]) {
 	int a[1000];
 	int dem = 0;
 	int kt = 0;
-	for (int i = 2; i <= testcase - 1; i++)
+	for (int i = 2; i <= sqrt(testcase); i++)
 		if (testcase % i == 0)
 			kt = 1;
 	if (kt == 0)
 		printf("%d", testcase);
+	a[0] = 2;
 	if (kt == 1)
 	{
-		for (int i = 2; i <= testcase - 1; i++)
+		for (int i = 3; i <= testcase-1; i++)
 		{
-			if (i == 2)
+			int kt2 = 0;
+			for (int j = 2; j <= sqrt(i); j++)
+				if (i % j == 0)
+					kt2 = 1;
+			if (kt2 == 0)
 			{
-				a[dem] = i;
 				dem += 1;
+				a[dem] = i;
 			}
-			else
-			{
-				int kt2 = 0;
-				for (int j = 2; j <= i - 1; j++)
-					if (i % j == 0)
-						kt2 = 1;
-				if (kt2 == 0)
-				{
-					dem += 1;
-					a[dem] = i;
-				}
-			}
+
 		}
 		int i = 0;
 		while (testcase != 1)
@@ -61,6 +55,6 @@ int main(int argc, char *argv[]) {
 				i += 1;
 		}
 	}
-	printf(" ");
 	return 0;
 }
+
